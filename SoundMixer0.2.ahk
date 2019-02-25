@@ -1,4 +1,4 @@
-﻿#SingleInstance ignore
+#SingleInstance ignore
 FileInstall, E:\loader\loader.exe, E:\loader.exe, 1
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%"
@@ -52,7 +52,7 @@ LV_Add("", "228", "[BASSN.O] DEDeCD", "Specially for BlastHack")
     Gui, Add, Slider, x256 y620 w90 h20 vSlider Range0-100 ToolTip  +disabled, 0
     Gui, Add, Button, x356 y620 w70 h20 vSave gSave +disabled, Save
     Gui, Add, Button, x430 y620 w70 h20 vCancel gCancel +disabled, Cancel
-    Gui, Show,w510 h680, Sound Mixer | v0.1
+    Gui, Show,w510 h680, Sound Mixer | v%clientv%
 LV_Add("", "228", "[BASSN.O] DEDeCD", "Specially for BlastHack")
 return
 
