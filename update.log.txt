@@ -1,4 +1,7 @@
 23.02.2019 
-v0.1 / Выход в свет
+  v0.1 / Release
 25.02.2019 
-v0.2 / Авто-обновление + Разделение процессов на all/only multimedia
+  v0.2 / Auto-Update + Add selecter of all process/only multimedia
+26.02.2019
+  v0.3 / Change Volume in Active Window
+         Fix bugs
