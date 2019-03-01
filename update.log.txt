@@ -5,3 +5,5 @@
 26.02.2019
   v0.3 / Change Volume in Active Window
          Fix bugs
+01.03.2019
+  v0.3b / Fix autoupdate (the site changed an HTML code)
