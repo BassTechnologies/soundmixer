@@ -7,3 +7,5 @@
          Fix bugs
 01.03.2019
   v0.3b / Fix autoupdate (the site changed an HTML code)
+05.03.2019
+  v0.4 REBORN / Recoded profile system
