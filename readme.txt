@@ -2,10 +2,12 @@
 This is an auto-update file that downloads the updated version in replacement of the old one. The source code is present.
 
   2. Actual version?
-0.3v
+0.4v
 
   3. .ahk - what is this file type?
 AutoHotKey, source code
 
   4. Update error?
 Rename your soundmixer file to soundmixer.exe
+     Anyway?
+Redownload with off antivirus
