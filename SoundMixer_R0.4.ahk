@@ -1,38 +1,39 @@
-﻿#SingleInstance ignore
-FileInstall, E:\loader\loader.exe, E:\loader.exe, 1
+
+
+
+;	author - bass_devware
+;	If you copy, modify or use my script lines for your own goals - indicate my authorship.
+;	@bass_devware
+
+
+
+#SingleInstance ignore
+OnExit, ExitLabel
 if not A_IsAdmin
-    Run *RunAs "%A_ScriptFullPath%"
-clientv = 0.4
-;/////Авто-обновление \\\\\
+    Run *RunAs "%A_ScriptFullPath%",,UseErrorLevel
+	if errorlevel
+	{
+	MsgBox, 262160, SoundMixer Reborn, For the script to work properly`, you must run it with admin rights.
+	ExitApp
+	}
+clientv = 4
+;/////AutoUpdate \\\\\
 oWhr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-oWhr.Open("GET", "http://blast.hk/threads/30742/", false)
+oWhr.Open("GET", "https://raw.githubusercontent.com/MirchikAhtung/soundmixer/master/readme.txt", false)
 oWhr.Send()
 html := oWhr.ResponseText
-;FileAppend, %html%, E:\uauua.txt
-RegExMatch(html, "<br />`nАктуальная версия - (.*)v<br />`nid файла", version)
+RegExMatch(html, "0.(.*)v`n`n  3.", version)
 RegExMatch(html, "id файла - (.*)n<br />", load)
-;MsgBox %load1% and %version1%
 if version1 != % clientv
-    {
-MsgBox, 262212, Вышло обновление, 	Версия вашего клиента - %clientv%`nПоследняя версия - %version1%`n`nЖелаете загрузить актуальную версию прямо сейчас?
+{
+MsgBox, 262212, Update released, 	Version of your client - 0.%clientv%`nLatest version - 0.%version1%`n`nWant to download the new version now?`n`n"YES" - Open Browser Page`n"NO" - Open current version (0.%clientv%)
 IfMsgBox Yes
-        {
-FileGetSize, OutputVar, %A_WorkingDir%\loader.exe
-if OutputVar =
-                {
-MsgBox,,Обновление, Файл [Loader.exe] отсутствует
-                }
-else
-			{
-sleep 100
-UrlDownloadToFile, http://blast.hk/attachments/%load1%, %A_WorkingDir%\SoundMixerUpdate.exe
-	TrayTip, Обновление, В процессе
-	run, %A_WorkingDir%\loader.exe
+{
+run, https://github.com/MirchikAhtung/soundmixer/blob/master/SoundMixer_R0.%version1%.exe
 ExitApp
-            }
-        }
-    }
-;/////Авто-обновление \\\\\
+}
+}
+;/////AutoUpdate \\\\\
 var = 0
 Gui, Margin, 10, 10
     Gui, Add, ListView, w500 h600 vList +disabled +AltSubmit, PID|Process Name|Command Line
@@ -55,7 +56,7 @@ Gui, Margin, 10, 10
 			Gui, Add, Slider, x350 y680 w152 h20 vSlider Range0-100 ToolTip  +disabled, 0
 		Gui, Add, Button, x356 y625 w70 h20 vSave gSave +disabled, Save
     Gui, Add, Button, x430 y625 w70 h20 vCancel  gCancel +disabled, Cancel
-Gui, Show,w510 h710, SoundMixer Reborn | %clientv%v
+Gui, Show,w510 h710, SoundMixer Reborn | @bass_devware | 0.%clientv%v
 return
 
 AllProcess:
@@ -243,6 +244,16 @@ If (pid%A_ThisHotkey% = "ActiveWindow" Or process%A_ThisHotkey% = "ActiveWindow"
 	WinGet, pid%A_ThisHotkey%, PID, A
 }
 SetAppVolume(pid%A_ThisHotkey%, %A_ThisHotkey%)
+return
+
+ExitLabel:
+if A_ExitReason not in Logoff,Shutdown
+{
+    MsgBox, 262180, SoundMixerR | Exit, Are you sure you want to quit?
+    IfMsgBox, No
+        return
+}
+ExitApp
 return
 
 SetAppVolume(pid, MasterVolume)  
