@@ -17,7 +17,7 @@ if not A_IsAdmin
 	ExitApp
 	}
 clientv = 3
-;/////Авто-обновление \\\\\
+;///// AutoUpdate \\\\\
 oWhr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 oWhr.Open("GET", "https://raw.githubusercontent.com/MirchikAhtung/soundmixer/master/readme.txt", false)
 oWhr.Send()
@@ -32,7 +32,7 @@ run, https://github.com/MirchikAhtung/soundmixer/blob/master/SoundMixer_R0.%vers
 ExitApp
 }
 }
-;/////Авто-обновление \\\\\
+;///// AutoUpdate \\\\\
 var = 0
     Gui, Margin, 10, 10
     Gui, Add, ListView, w500 h600 vList +AltSubmit, PID|Process Name|Command Line
