@@ -10,7 +10,7 @@
 #SingleInstance ignore
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%"
-clientv = 0.2
+clientv = 2
 ;///// AutoUpdate \\\\\
 oWhr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 oWhr.Open("GET", "https://raw.githubusercontent.com/MirchikAhtung/soundmixer/master/readme.txt", false)
