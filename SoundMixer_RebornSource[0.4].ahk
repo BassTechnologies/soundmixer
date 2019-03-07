@@ -23,7 +23,6 @@ oWhr.Open("GET", "https://raw.githubusercontent.com/MirchikAhtung/soundmixer/mas
 oWhr.Send()
 html := oWhr.ResponseText
 RegExMatch(html, "0.(.*)v`n`n  3.", version)
-RegExMatch(html, "id файла - (.*)n<br />", load)
 if version1 != % clientv
 {
 MsgBox, 262212, Update released, 	Version of your client - 0.%clientv%`nLatest version - 0.%version1%`n`nWant to download the new version now?`n`n"YES" - Open Browser Page`n"NO" - Open current version (0.%clientv%)
