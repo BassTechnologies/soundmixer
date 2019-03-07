@@ -1,4 +1,13 @@
-﻿if not A_IsAdmin
+
+
+
+;	author - bass_devware
+;	If you copy, modify or use my script lines for your own goals - indicate my authorship.
+;	@bass_devware
+
+
+
+ if not A_IsAdmin
 	Run *RunAs "%A_ScriptFullPath%"
 var = 0
 	Gui, Margin, 10, 10
@@ -14,8 +23,6 @@ var = 0
 	Gui, Add, Button, x356 y620 w70 h20 vSave gSave +disabled, Save
 	Gui, Add, Button, x430 y620 w70 h20 vCancel gCancel +disabled, Cancel
 	Gui, Show,w510 h650, Sound Mixer | v0.1
-		LV_Add("", "228", "[BASSN.O] DEDeCD", "Specially for BlastHack")
-	TrayTip, Автор:  [BASSN.O] DEDeCD, Специально для blast.hk, 5, 1
 return
 
 cancel:
