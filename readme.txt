@@ -1,6 +1,6 @@
 
   1. Actual version?
-0.4v
+0.5v
 
   2. .ahk - what is this file type?
 AutoHotKey, source code
