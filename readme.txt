@@ -1,6 +1,6 @@
 
   1. Actual version?
-0.5v
+0.6v
 
   2. .ahk - what is this file type?
 AutoHotKey, source code
@@ -9,3 +9,5 @@ AutoHotKey, source code
     SoundMixer.exe - 0.3v with the old profile system of profiles.
     SoundMixer_R0.*.exe or SoundMixer_Reborn - "Reborn" series of Sound Mixer.
     - all subsequent versions will have index "R" in the file-name. 
+
+  4. The final version was released on March 23, 2019
